@@ -129,7 +129,7 @@ It's cleaner to pass to a constructor a config obj rather than arguments. This w
 let obj = maker(a,b,c,d,e,f); //instead of this
 let obj = maker({a,b,c,d}); //do this
 ```
-## Prototypal
+### Prototypal
 We forget about class: an object can inherits the properties of other one
 ```node
 let myMammel = {name,get_name,says};
@@ -137,12 +137,30 @@ let myCat = Object.create(myMammel);
 myCat.purr = function(){console.log('grrrr')};
 ```
 This is differential inheritance. We spcifiy the differences from the object on which it is based.
-## Functional
+### Functional
 What we've seen till now doesn't allow us privacy.
 ```node
 //TODO
 ```
-## Parts
+### Parts
+```node
+//TODO
+```
+## Arrays
+Arrays are not really arrays, they are just objects.
+So
+```node
+let a=['a','b','c']
+```
+is really like
+```node
+{'0':'a', '1':'b', '2':'c'}
+```
+The difference is the arrays inherits from Array.prototype so it comes with more methods. and has a secret `length` property.
+
+So use arrays when you need objects with 0,1,2,3 properties...
+
+## Regular Expressions
 ```node
 //TODO
 ```
